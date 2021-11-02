@@ -15,7 +15,9 @@ Our CPU embodies two parts: the CPU_Main part and the Machine Code ROM part, and
 
 ## Simulations
 
-Simulating |a+b-c|. E.g. |48+16-64| = 16
+We are simulating |a+b-c| for example. 
+
+E.g. |48+16-64| = 16
 The instructions in the Machine Code ROM are:
   //Example_1_:|32+16-64|
   //MOV AL, 32
