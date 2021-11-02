@@ -19,7 +19,7 @@ We are simulating |a+b-c| for example.
 
 E.g. |48+16-64| = 16
 The instructions in the Machine Code ROM are:
-`
+```verilog
   //Example_1_:|32+16-64|
   
   //MOV AL, 32
@@ -37,7 +37,7 @@ The instructions in the Machine Code ROM are:
   //ABS AL
   
   ALL_instruction[15:0] <= 16'b011_0_z_000_zzzzzzzz;
- `
+```
 
 <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/example_2.jpeg" width="800" alt="13"> 
 
@@ -46,12 +46,14 @@ The following shows the outputs of the ALU of each instruction.
 <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/table_3.png" width="640" alt="13"> 
 
 ## Detailed Architecture
-### CPU Main
-CPU_Main involves 5 sub parts.
+
+The six detailed modules are shown below.
 
 <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/instruction_register_module.jpeg" width="220" alt="1">  <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/instruction_decoder.jpeg" width="220" alt="3"> <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/data_register.jpeg" width="220" alt="4"> 
 
 <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/mul_reg_to_alu.png" width="220" alt="6"> <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/alu_module.jpeg" width="220" alt="7"> <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/machine_code_rom.png" width="220" alt="8"> 
+### CPU Main
+CPU_Main involves 5 sub parts.
 
 #### Instruction Register Module
 
