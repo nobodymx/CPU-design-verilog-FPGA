@@ -38,17 +38,13 @@ CPU_Main involves 5 sub parts.
 
 The Instruction Register receives the instructions from the Machine Code ROM through the Data Bus. As one instruction is in 16 bits while the width of Data Bus is in 8 bits, two clocks are necessary to completely receive one instruction. The instruction registers inside will update after two clocks and they will send the first half instruction to the Instruction Decoder and the second half to the Multiplexer_Reg_to_ALU. The following shows the Instruction Register Module.
 
-<img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/instruction_register_module.jpeg" width="320" alt="1">  
-<img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/instruction_decoder.jpeg" width="320" alt="3"> 
-<img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/data_register.jpeg" width="320" alt="4"> 
+<img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/instruction_register_module.jpeg" width="320" alt="1">  <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/instruction_decoder.jpeg" width="320" alt="3"> <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/data_register.jpeg" width="320" alt="4"> 
 
-<img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/mul_reg_to_alu.png" width="320" alt="6"> 
-<img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/alu_module.jpeg" width="320" alt="7"> 
-<img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/machine_code_rom.png" width="320" alt="8"> 
+<img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/mul_reg_to_alu.png" width="320" alt="6"> <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/alu_module.jpeg" width="320" alt="7"> <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/machine_code_rom.png" width="320" alt="8"> 
 
 #### Instruction Decoder Module
 The Instruction Decoder is utterly one of the most important parts of the CPU, since it controls the activities of all the parts. It receives the first half of the instruction and sends the orders to other modules (ALU, Data Register, etc.). The vital control signals are listed below.
-<img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/table.png" width="320" alt="2">
+<img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/table.png" width="640" alt="2">
 
 #### Data Register Module
 There are three sub parts of the Data Register: data registers, data write decoder, and data read multiplexers.Fig 4 elucidates the Data Register Module.
