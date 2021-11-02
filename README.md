@@ -21,23 +21,17 @@ E.g. |48+16-64| = 16
 The instructions in the Machine Code ROM are:
 ```verilog
   //Example_1_:|32+16-64|
-  
   //MOV AL, 32
-  
   ALL_instruction[63:48] <= 16'b000_1_1_000_00100000;
-  
   //ADD AL, 16
-  
   ALL_instruction[47:32] <= 16'b001_1_1_000_00010000;
-  
   //SUB AL, 64
-  
   ALL_instruction[31:16] <= 16'b010_1_1_000_01000000;
-  
   //ABS AL
-  
   ALL_instruction[15:0] <= 16'b011_0_z_000_zzzzzzzz;
 ```
+
+The time diagram result is shown below.
 
 <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/example_2.jpeg" width="800" alt="13"> 
 
