@@ -46,6 +46,7 @@ The six detailed modules are shown below.
 <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/instruction_register_module.jpeg" width="220" alt="1">  <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/instruction_decoder.jpeg" width="220" alt="3"> <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/data_register.jpeg" width="220" alt="4"> 
 
 <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/mul_reg_to_alu.png" width="220" alt="6"> <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/alu_module.jpeg" width="220" alt="7"> <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/machine_code_rom.png" width="220" alt="8"> 
+
 ### CPU Main
 CPU_Main involves 5 sub parts.
 
@@ -55,12 +56,14 @@ The Instruction Register receives the instructions from the Machine Code ROM thr
 
 #### Instruction Decoder Module
 The Instruction Decoder is utterly one of the most important parts of the CPU, since it controls the activities of all the parts. It receives the first half of the instruction and sends the orders to other modules (ALU, Data Register, etc.). The vital control signals are listed below.
+
 <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/table.png" width="640" alt="2">
 
 #### Data Register Module
 There are three sub parts of the Data Register: data registers, data write decoder, and data read multiplexers.Fig 4 elucidates the Data Register Module.
 
 A data register contains 8 bits(one byte) memories. 8 data registers with the addresses from 000 to 111 are all set, each of them can accommodate 8 bytes data. We can actually create more registers to save more data. There are two multiplexers to enable data A and data B to be the output. The control signals are from Instruction Decoder.There is also a write data decoder which enables the data to write in a certain register according to the address. The hierarchy of the data register is shown below.
+
 <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/hierarchy.png" width="640" alt="5">
 
 
