@@ -19,15 +19,25 @@ We are simulating |a+b-c| for example.
 
 E.g. |48+16-64| = 16
 The instructions in the Machine Code ROM are:
+`
   //Example_1_:|32+16-64|
+  
   //MOV AL, 32
+  
   ALL_instruction[63:48] <= 16'b000_1_1_000_00100000;
+  
   //ADD AL, 16
+  
   ALL_instruction[47:32] <= 16'b001_1_1_000_00010000;
+  
   //SUB AL, 64
+  
   ALL_instruction[31:16] <= 16'b010_1_1_000_01000000;
+  
   //ABS AL
+  
   ALL_instruction[15:0] <= 16'b011_0_z_000_zzzzzzzz;
+ `
 
 <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/example_2.jpeg" width="800" alt="13"> 
 
@@ -39,13 +49,13 @@ The following shows the outputs of the ALU of each instruction.
 ### CPU Main
 CPU_Main involves 5 sub parts.
 
-#### Instruction Register Module
-
-The Instruction Register receives the instructions from the Machine Code ROM through the Data Bus. As one instruction is in 16 bits while the width of Data Bus is in 8 bits, two clocks are necessary to completely receive one instruction. The instruction registers inside will update after two clocks and they will send the first half instruction to the Instruction Decoder and the second half to the Multiplexer_Reg_to_ALU. The following shows the Instruction Register Module.
-
 <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/instruction_register_module.jpeg" width="220" alt="1">  <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/instruction_decoder.jpeg" width="220" alt="3"> <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/data_register.jpeg" width="220" alt="4"> 
 
 <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/mul_reg_to_alu.png" width="220" alt="6"> <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/alu_module.jpeg" width="220" alt="7"> <img src="https://github.com/nobodymx/CPU-design-verilog-FPGA/blob/main/Img/machine_code_rom.png" width="220" alt="8"> 
+
+#### Instruction Register Module
+
+The Instruction Register receives the instructions from the Machine Code ROM through the Data Bus. As one instruction is in 16 bits while the width of Data Bus is in 8 bits, two clocks are necessary to completely receive one instruction. The instruction registers inside will update after two clocks and they will send the first half instruction to the Instruction Decoder and the second half to the Multiplexer_Reg_to_ALU. The following shows the Instruction Register Module.
 
 #### Instruction Decoder Module
 The Instruction Decoder is utterly one of the most important parts of the CPU, since it controls the activities of all the parts. It receives the first half of the instruction and sends the orders to other modules (ALU, Data Register, etc.). The vital control signals are listed below.
