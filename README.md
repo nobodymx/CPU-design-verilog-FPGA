@@ -4,6 +4,9 @@ We design a CPU with verilog. This responsitory contains the source codes and si
 
 Zhiyu Mou, Luxi He
 
+The whole project codes are avaiable on 
+https://cloud.tsinghua.edu.cn/f/f2756af1126f495b8e99/ or https://drive.google.com/file/d/1dpocVqQ6oqilHt0QoGOrNsJc2w286cJ0/view?usp=sharing
+
 ## General Architecture
 
 Our CPU embodies two parts: the CPU_Main part and the Machine Code ROM part, and they are affixed by a data bus of 8 bits. Besides, the CLK wire and the RESET wire employ the clock signals and the reset signals for the whole CPU. The general architecture of our CPU is shown below. We use 8 bits to represent the data in this CPU and 16 bits for instructions.
